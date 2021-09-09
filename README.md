@@ -17,3 +17,11 @@
    6) Tested use of action. Action server functioned from outset, but for rasa bot to use custom action, I had to retrain
       1) `rasa train`
       2) In one terminal, run `rasa run actions`. In separate terminal, run `rasa tests` to generate test results on `test_stories.yml` or run `rasa shell` to test ad-hoc user interaction
+5) Added nltk to env to get synsets for better quote searching in `bronte_quotes.py`
+   1) `conda install -c conda-forge nltk`
+   2) Downloaded nltk wordnet corpus
+      ```python
+      import nltk
+      nltk.download('wordnet')
+      ```
+6) Specified environment package builds and versions in `bronte_bot_env.yml` using `conda env export > bronte_bot_env.yml`
