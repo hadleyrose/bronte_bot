@@ -12,6 +12,7 @@ stories:
       amazing
     intent: mood_great
   - action: utter_happy
+  - action: action_hello_world
 
 - story: happy path 2
   steps:
@@ -23,6 +24,7 @@ stories:
       amazing
     intent: mood_great
   - action: utter_happy
+  - action: action_hello_world
   - user: |
       bye-bye!
     intent: goodbye

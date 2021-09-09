@@ -8,3 +8,12 @@
    6) `pip install wikiquote`
 3) Initialize project structure
    1) `rasa init` -- enabled in current directory, trained an initial model based on provided data and setup, tested on CLI
+4) Tested and updated default custom action
+   1) Uncommented custom action in `actions.py` and formatted utter message as f-string to return date and time
+   2) Added custom action to `domain.yml` in new actions section
+   3) Added custom action to stories -- happy path
+   4) Updated `test_stories.yml` to test custom action
+   5) Uncommented `action_endpoint` in `endpoints.yml`
+   6) Tested use of action. Action server functioned from outset, but for rasa bot to use custom action, I had to retrain
+      1) `rasa train`
+      2) In one terminal, run `rasa run actions`. In separate terminal, run `rasa tests` to generate test results on `test_stories.yml` or run `rasa shell` to test ad-hoc user interaction
