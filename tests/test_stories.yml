@@ -7,24 +7,16 @@ stories:
   - user: |
       hello there!
     intent: greet
+  - action: action_random_greeting
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - action: action_hello_world
 
 - story: happy path 2
   steps:
   - user: |
       hello there!
     intent: greet
+  - action: action_random_greeting
   - action: utter_greet
-  - user: |
-      amazing
-    intent: mood_great
-  - action: utter_happy
-  - action: action_hello_world
   - user: |
       bye-bye!
     intent: goodbye
@@ -35,6 +27,7 @@ stories:
   - user: |
       hello
     intent: greet
+  - action: action_random_greeting
   - action: utter_greet
   - user: |
       not good
@@ -51,6 +44,7 @@ stories:
   - user: |
       hello
     intent: greet
+  - action: action_random_greeting
   - action: utter_greet
   - user: |
       not good
@@ -67,6 +61,7 @@ stories:
   - user: |
       hi
     intent: greet
+  - action: action_random_greeting
   - action: utter_greet
   - user: |
       very terrible

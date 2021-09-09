@@ -2,17 +2,16 @@ version: "2.0"
 
 stories:
 
-- story: happy path where a custom action returns events
+- story: happy path w random Bronte quote containing greeting lemma
   steps:
   - intent: greet
+  - action: action_random_greeting
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-  - action: action_hello_world
 
-- story: sad path 1
+- story: sad path 1 w random Bronte quote containing greeting lemma
   steps:
   - intent: greet
+  - action: action_random_greeting
   - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
@@ -20,9 +19,10 @@ stories:
   - intent: affirm
   - action: utter_happy
 
-- story: sad path 2
+- story: sad path 2 w random Bronte quote containing greeting lemma
   steps:
   - intent: greet
+  - action: action_random_greeting
   - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
