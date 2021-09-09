@@ -1,6 +1,7 @@
 # https://pypi.org/project/wikiquote/
 import wikiquote
 import random
+from nltk.corpus import wordnet as wn
 
 # store Bronte names
 emily = 'Emily Brontë'
@@ -26,3 +27,15 @@ print(*[f'{bronte}: {quote}' for bronte, result in results.items() for quote in 
 
 # Get source of quote found in results
 print(*[bronte for bronte, result in results.items() for quote in result if 'and he said he could not breathe in mine' in quote.lower()])
+
+# Lemma of the word greeting
+wn.synset('greeting.n.01').lemma_names()
+# Lemma of the hyponyms of the word greeting
+print(*[str(i).replace('_', ' ').replace('-', ' ') for syn in wn.synset('greeting.n.01').hyponyms() for i in syn.lemma_names()])
+
+# Get quotes containing lemma
+tests = [str(i).replace('_', ' ').replace('-', ' ') for syn in wn.synset('greeting.n.01').hyponyms() for i in syn.lemma_names()]
+# fuzzy match -- returns 200 results
+print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for test in tests if test in quote.lower()], sep='\n')
+# exact word match -- returns 25 results
+print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for w in quote.split() for test in tests if test == w.lower()], sep='\n')
