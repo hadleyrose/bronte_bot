@@ -25,3 +25,10 @@
       nltk.download('wordnet')
       ```
 6) Specified environment package builds and versions in `bronte_bot_env.yml` using `conda env export > bronte_bot_env.yml`
+7) Created `action_random_greeting` in `actions.py`
+   1) Modified `actions.py` to utilize wikiquote, random, and wordnet to pull and generate a random "greeting" quote from a Bronte
+   2) Incorporated new `action_random_greeting` into `domain.yml` actions, `stories.yml` stories, and `test_stories.yml`
+   3) Re-trained rasa model, ran into errors based on environment changes, resolved (below), and re-trained
+   4) Ran actions server and bot and confirmed random quote activity
+   5) Ran test_stories to confirm expected behavior of `action_random_greeting`
+8) Ran `pip install numpy==1.19.5` to resolve `NotImplementedError: Cannot convert a symbolic Tensor (strided_slice_6:0) to a numpy array. This error may indicate that you're trying to pass a Tensor to a NumPy call, which is not supported` when running `rasa train` following nltk update -- [see this github issue](https://github.com/RasaHQ/rasa/issues/7885#issuecomment-773642353)
