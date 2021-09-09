@@ -10,6 +10,9 @@ intents:
   - bot_challenge
 
 responses:
+  utter_default:
+  - text: "Welcome to Bronte Bot! Say hello!"
+
   utter_greet:
   - text: "Hey! How are you?"
 

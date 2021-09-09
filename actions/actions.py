@@ -42,6 +42,6 @@ class ActionRandomGreeting(Action):
         # get random quote
         quote = random.choice(greetings)
 
-        dispatcher.utter_message(text=f"{quote[2]} \n \x1B[3m-{quote[0]}\x1B[0m")
+        dispatcher.utter_message(text=f"{quote[2]} \n {quote[0]}")
 
         return []

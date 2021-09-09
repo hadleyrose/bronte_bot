@@ -4,12 +4,14 @@ stories:
 
 - story: happy path w random Bronte quote containing greeting lemma
   steps:
+  - action: utter_default
   - intent: greet
   - action: action_random_greeting
   - action: utter_greet
 
 - story: sad path 1 w random Bronte quote containing greeting lemma
   steps:
+  - action: utter_default
   - intent: greet
   - action: action_random_greeting
   - action: utter_greet
@@ -21,6 +23,7 @@ stories:
 
 - story: sad path 2 w random Bronte quote containing greeting lemma
   steps:
+  - action: utter_default
   - intent: greet
   - action: action_random_greeting
   - action: utter_greet
