@@ -1,7 +1,7 @@
 # Bronte Bot
 ## Rasa-Powered Chatbot utilizing Quotes from the Brontes
 
-<img align="center" src="https://github.com/hadleyrose/bronte_bot/blob/main/bronte_bot_demo.gif" alt="demonstration">
+<img align="center" src="https://github.com/hadleyrose/gifs/blob/main/demo/bronte_bot_demo.gif" alt="demonstration">
 
 1) Setup project with .gitignore and .gitattributes
 2) Create environment
