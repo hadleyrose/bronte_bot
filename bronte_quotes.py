@@ -39,3 +39,23 @@ tests = [str(i).replace('_', ' ').replace('-', ' ') for syn in wn.synset('greeti
 print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for test in tests if test in quote.lower()], sep='\n')
 # exact word match -- returns 25 results
 print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for w in quote.split() for test in tests if test == w.lower()], sep='\n')
+
+# Useful hypernyms
+terms = [
+    'communication.n.02',
+    'message.n.02',
+    'acknowledgment.n.03',
+    'farewell.n.01'
+]
+
+# Lemma of the word greeting
+wn.synset('farewell.n.01').lemma_names()
+# Lemma of the hyponyms of the word greeting
+print(*[str(i).replace('_', ' ').replace('-', ' ') for syn in wn.synset('farewell.n.01').hyponyms() for i in syn.lemma_names()])
+
+# Get quotes containing lemma
+tests = [str(i).replace('_', ' ').replace('-', ' ') for syn in wn.synset('farewell.n.01').hyponyms() for i in syn.lemma_names()]
+# fuzzy match -- returns 200 results
+print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for test in tests if test in quote.lower()], sep='\n')
+# exact word match -- returns 25 results
+print(*[f'{bronte, test}: {quote}' for bronte, result in results.items() for quote in result for w in quote.split() for test in tests if test == w.lower()], sep='\n')
